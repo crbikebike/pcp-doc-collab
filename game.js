@@ -16,8 +16,8 @@
       id: 'wait', ill: 'reading-bench',
       text: 'Do you enjoy waiting weeks for an appointment — then meeting a doctor who’s never met you?',
       options: [
-        { label: 'Love it — keeps life spicy', dpc: false, react: 'Bold.' },
         { label: 'Ugh, no thanks', dpc: true, react: 'Same.' },
+        { label: 'Love it — keeps life spicy', dpc: false, react: 'Bold.' },
       ],
       recap: 'you’re done waiting weeks to see a stranger',
     },
@@ -25,8 +25,8 @@
       id: 'bills', ill: 'growth-chart',
       text: 'Be honest: do you love a surprise bill showing up three weeks after a quick visit?',
       options: [
-        { label: 'I live for them 🧾', dpc: false, react: 'A thrill-seeker.' },
         { label: 'Absolutely not', dpc: true, react: 'Noted.' },
+        { label: 'I live for them 🧾', dpc: false, react: 'A thrill-seeker.' },
       ],
       recap: 'you’re over surprise bills',
     },
