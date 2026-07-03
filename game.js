@@ -6,7 +6,7 @@
    a fit flows to signup, a "miss" nudges you to learn more.
    ============================================================ */
 (function () {
-  const FIT_THRESHOLD = 3; // DPC-favorable answers needed to "match"
+  const FIT_THRESHOLD = 2; // DPC-favorable answers (of 3) needed to "match"
 
   // Each question: two witty buttons. `dpc:true` = the DPC-favorable pick.
   // `recap` is echoed back in the result when they choose the DPC answer.
@@ -38,24 +38,6 @@
         { label: 'Nah, I like starting over each time', dpc: false, react: 'Living dangerously.' },
       ],
       recap: 'you want a doctor who truly knows you',
-    },
-    {
-      id: 'roof', ill: 'calm-armchair',
-      text: 'Want your physical and mental health handled by one doctor who sees the whole picture?',
-      options: [
-        { label: 'Yes — finally', dpc: true, react: 'Refreshing.' },
-        { label: 'No, I enjoy juggling five portals', dpc: false, react: 'Impressive stamina.' },
-      ],
-      recap: 'you’d love body and mind under one roof',
-    },
-    {
-      id: 'text', ill: 'message-doctor',
-      text: 'Would you rather text your doctor directly than fight a phone tree and hold music?',
-      options: [
-        { label: 'Texting, obviously', dpc: true, react: 'Smart.' },
-        { label: 'I ❤️ hold music', dpc: false, react: 'A rare breed.' },
-      ],
-      recap: 'you’d rather just text your doctor',
     },
   ];
 
@@ -99,8 +81,8 @@
       <div class="quiz-intro">
         <span class="ill big" data-ill="momentum-rocket" aria-hidden="true"></span>
         <span class="eyebrow">Be honest with yourself</span>
-        <h2>Five quick questions.<br>Let’s find out if we’re a match.</h2>
-        <p>No wrong answers — well, maybe a few. Takes about thirty seconds.</p>
+        <h2>Three quick questions.<br>Let’s find out if we’re a match.</h2>
+        <p>No wrong answers — well, maybe a few. Takes about twenty seconds.</p>
         <button class="btn btn-primary btn-lg" data-start>Let’s go <span class="arrow">→</span></button>
       </div>`);
     $('[data-start]', stage).addEventListener('click', () => renderQuestion(0));
@@ -117,7 +99,7 @@
         <span class="ill big" data-ill="${q.ill}" aria-hidden="true"></span>
         <h2 class="q-text">${q.text}</h2>
         <div class="answers">
-          ${q.options.map((o, oi) => `<button class="answer" data-opt="${oi}">${o.label}</button>`).join('')}
+          ${q.options.map((o, oi) => `<button class="answer ${o.dpc ? 'answer-primary' : 'answer-secondary'}" data-opt="${oi}">${o.label}</button>`).join('')}
         </div>
         <div class="q-foot">
           ${i > 0 ? '<button class="q-back" data-back>← back</button>' : '<span></span>'}

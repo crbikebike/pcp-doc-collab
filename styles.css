@@ -507,6 +507,10 @@ section { position: relative; padding: clamp(64px, 10vw, 128px) 0; }
 }
 .answer:hover { transform: translateY(-2px); border-color: var(--cta); box-shadow: var(--shadow-md); }
 .answer:focus-visible { outline: none; border-color: var(--cta); box-shadow: 0 0 0 3px var(--tint-cta); }
+/* the DPC-favorable answer reads as the primary CTA; the other stays secondary */
+.answer-primary { background: var(--cta); color: var(--cta-text); border-color: var(--cta); box-shadow: var(--shadow-md); }
+.answer-primary:hover { box-shadow: var(--shadow-lg); }
+.answer-secondary { background: var(--surface); color: var(--text); border-color: var(--line); }
 .answer.picked { background: var(--cta); color: var(--cta-text); border-color: var(--cta); transform: translateY(-2px); }
 .answer:disabled { cursor: default; }
 .answer:disabled:not(.picked) { opacity: .45; }
