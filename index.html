@@ -3,181 +3,339 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>DPC Color Palettes</title>
+  <title>Parity Direct Care — a doctor who knows all of you</title>
+  <meta name="description" content="Membership-based direct care in Las Vegas blending internal medicine and psychiatry. Same-day access, no insurance maze, no surprise bills — high-level care that isn't reserved for high incomes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
-  <style>
-    * { box-sizing: border-box; }
-    body { margin: 0; }
-    @media (max-width: 520px) {
-      body { padding: 40px 24px 72px !important; }
-      .palette-grid { grid-template-columns: 1fr !important; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="palettes.js"></script>
 </head>
-<body style="min-height:100vh; background:#f4f2ef; font-family:'Inter Tight', system-ui, sans-serif; color:#211f1d; padding:64px 56px 96px;">
+<body>
 
-  <header style="max-width:760px; margin:0 0 56px;">
-    <div style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8a847d; margin-bottom:20px;">Direct Primary Care · Therapy &amp; Psychiatry</div>
-    <h1 style="font-family:'Newsreader', serif; font-weight:500; font-size:44px; line-height:1.1; margin:0 0 18px; letter-spacing:-0.01em;">Color palettes for a trusted health partner</h1>
-    <p style="font-size:17px; line-height:1.6; color:#54504b; margin:0; max-width:600px;">Warm and cool directions, each tuned to feel professional and reassuring. Every palette assigns a primary, secondary, accent, and a high-contrast CTA — with WCAG contrast ratios computed live so the type stays readable and inclusive.</p>
-    <div style="display:flex; gap:10px; margin-top:24px; font-size:13px; flex-wrap:wrap;">
-      <span style="display:inline-flex; align-items:center; gap:7px; padding:6px 12px; background:#fff; border:1px solid #e4e0db; border-radius:100px;"><span style="width:8px;height:8px;border-radius:50%;background:#3a7a5f;display:inline-block;"></span>AA passes</span>
-      <span style="display:inline-flex; align-items:center; gap:7px; padding:6px 12px; background:#fff; border:1px solid #e4e0db; border-radius:100px;"><span style="width:8px;height:8px;border-radius:50%;background:#1f6f6f;display:inline-block;"></span>AAA passes</span>
-    </div>
+  <!-- ===================== NAV ===================== -->
+  <header class="nav" id="nav">
+    <a href="#top" class="brand"><span class="mark">P</span> Parity Direct Care</a>
+    <nav class="nav-links">
+      <a href="#how">How it works</a>
+      <a href="#care">Care</a>
+      <a href="#reach">Where</a>
+      <a href="#doctor">Your doctor</a>
+      <a href="#join" class="btn btn-primary">Become a member</a>
+    </nav>
   </header>
 
-  <section style="margin-bottom:18px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;">
-    <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:24px; margin:0;">Warm &amp; comforting</h2>
-    <span style="font-size:13px; color:#8a847d;">embracing, human, low-clinical</span>
-  </section>
-  <div id="warm" class="palette-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(420px, 1fr)); gap:28px; margin-bottom:64px;"></div>
+  <main id="top">
 
-  <section style="margin-bottom:18px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;">
-    <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:24px; margin:0;">Cool &amp; calming</h2>
-    <span style="font-size:13px; color:#8a847d;">steady, composed, quietly clinical</span>
-  </section>
-  <div id="cool" class="palette-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(420px, 1fr)); gap:28px;"></div>
-
-<script>
-const palettes = {
-  warm: [
-    { name:'Hearth', desc:'Plum-grey warmth with a dusty rose lift — soft, embracing, unhurried.',
-      primary:'#565264', secondary:'#706677', accent:'#A6808C', surface:'#FBF8F6', bg:'#E7DFDA', cta:'#8A4F5E',
-      ctaText:'#FFFFFF', text:'#322E36', muted:'#7C7480' },
-    { name:'Clay & Linen', desc:'Earthy terracotta and warm clay — grounded, reassuring, deeply human.',
-      primary:'#6B4A3A', secondary:'#9C7A66', accent:'#C9A892', surface:'#FBF6F0', bg:'#F0E6DB', cta:'#9C4626',
-      ctaText:'#FFFFFF', text:'#382A20', muted:'#8C7464' },
-    { name:'Dusk Comfort', desc:'Muted mauve and rose at evening — gentle, intimate, calming for sensitive care.',
-      primary:'#4E3D45', secondary:'#7D6670', accent:'#C2A0A6', surface:'#FBF7F6', bg:'#EFE4E2', cta:'#9E3F49',
-      ctaText:'#FFFFFF', text:'#2E2429', muted:'#80707A' },
-  ],
-  cool: [
-    { name:'Sage Clinic', desc:'Deep olive and soft mauve over cool linen — composed and quietly clinical.',
-      primary:'#45503B', secondary:'#747572', accent:'#B098A4', surface:'#FFFFFF', bg:'#E5EBEA', cta:'#2F6F62',
-      ctaText:'#FFFFFF', text:'#2A2E26', muted:'#76796F' },
-    { name:'Still Water', desc:'Teal-slate and pale aqua — steady, trustworthy, clear-headed.',
-      primary:'#2C4A52', secondary:'#5E7B82', accent:'#9DB4B8', surface:'#FFFFFF', bg:'#E9F0F1', cta:'#2E6F7C',
-      ctaText:'#FFFFFF', text:'#1E2E33', muted:'#6B8087' },
-    { name:'Morning Sage', desc:'Forest green with a warm terracotta CTA — calm base, inviting action.',
-      primary:'#3D5043', secondary:'#6E8071', accent:'#A8B9A4', surface:'#FFFFFF', bg:'#EAEFE9', cta:'#A84E2A',
-      ctaText:'#FFFFFF', text:'#232A24', muted:'#74806F' },
-    { name:'Harbor Blue', desc:'Deep navy and slate-blue over pale sky — confident, secure, unmistakably trustworthy.',
-      primary:'#22405C', secondary:'#4F6E8A', accent:'#9DB5CC', surface:'#FFFFFF', bg:'#E7EEF4', cta:'#1F6E8C',
-      ctaText:'#FFFFFF', text:'#1A2B3A', muted:'#647C92' },
-    { name:'Harbor Blue · Coral', desc:'Same navy base with a warm coral CTA — the complementary contrast makes the action jump off the cool field.',
-      primary:'#22405C', secondary:'#4F6E8A', accent:'#9DB5CC', surface:'#FFFFFF', bg:'#E7EEF4', cta:'#C24A3A',
-      ctaText:'#FFFFFF', text:'#1A2B3A', muted:'#647C92' },
-    { name:'Heather', desc:'Plum and soft lavender-grey on cool linen — calming and emotionally attuned for mental-health care.',
-      primary:'#473A52', secondary:'#6E5F7A', accent:'#B3A2C2', surface:'#FFFFFF', bg:'#ECE8F0', cta:'#6A4E8C',
-      ctaText:'#FFFFFF', text:'#272030', muted:'#7C7088' },
-    { name:'Driftwood', desc:'Cool taupe and sand over greige — warm-leaning neutral that still reads quiet and clinical.',
-      primary:'#4A4036', secondary:'#7A6E60', accent:'#C2B2A0', surface:'#FFFFFF', bg:'#ECE7E0', cta:'#3F6E63',
-      ctaText:'#FFFFFF', text:'#2B241D', muted:'#80776A' },
-    { name:'Driftwood · Sandstone', desc:'Same cool taupe base with a warm sandstone CTA — keeps the neutral calm but makes the action feel grounded and earthy.',
-      primary:'#4A4036', secondary:'#7A6E60', accent:'#C2B2A0', surface:'#FFFFFF', bg:'#ECE7E0', cta:'#9A5A33',
-      ctaText:'#FFFFFF', text:'#2B241D', muted:'#80776A' },
-  ]
-};
-
-function hexToRgb(h) {
-  h = h.replace('#','');
-  return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
-}
-function lum([r,g,b]) {
-  const f = c => { c/=255; return c<=0.03928 ? c/12.92 : Math.pow((c+0.055)/1.055,2.4); };
-  return 0.2126*f(r)+0.7152*f(g)+0.0722*f(b);
-}
-function contrastRatio(a,b) {
-  const l1=lum(hexToRgb(a)), l2=lum(hexToRgb(b));
-  const hi=Math.max(l1,l2), lo=Math.min(l1,l2);
-  return (hi+0.05)/(lo+0.05);
-}
-function level(r, large) {
-  if (r >= 7)            return {tag:'AAA', color:'#1f6f6f'};
-  if (r >= 4.5)          return {tag:'AA',  color:'#3a7a5f'};
-  if (r >= 3 && large)   return {tag:'AA Large', color:'#b07d2e'};
-  return                        {tag:'Low', color:'#b04a3a'};
-}
-
-function buildCard(p) {
-  const swatches = [
-    {hex:p.primary,   role:'Primary'},
-    {hex:p.secondary, role:'Secondary'},
-    {hex:p.accent,    role:'Accent'},
-    {hex:p.surface,   role:'Surface'},
-    {hex:p.bg,        role:'Background'},
-    {hex:p.cta,       role:'CTA'},
-  ];
-
-  const mk = (fg, bg, label, large) => {
-    const r = contrastRatio(fg, bg);
-    const lv = level(r, large);
-    return {label, ratio:r.toFixed(1)+':1', tag:lv.tag, color:lv.color};
-  };
-  const checks = [
-    mk(p.text,    p.surface, 'Body on surface',    false),
-    mk(p.primary, p.surface, 'Heading on surface', true),
-    mk(p.ctaText, p.cta,     'Label on CTA',       false),
-    mk(p.text,    p.bg,      'Body on background',  false),
-  ];
-
-  const swatchStrip = swatches.map(s =>
-    `<div style="flex:1;background:${s.hex};"></div>`
-  ).join('');
-
-  const swatchLabels = swatches.map(s =>
-    `<div style="flex:1;text-align:center;padding:0 2px;">
-      <div style="font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:#9a948d;">${s.role}</div>
-      <div style="font-size:10px;font-family:'Inter Tight',monospace;color:#54504b;margin-top:2px;">${s.hex.toUpperCase()}</div>
-    </div>`
-  ).join('');
-
-  const checkCells = checks.map(c =>
-    `<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 11px;background:#f7f5f2;border-radius:7px;">
-      <span style="font-size:11.5px;color:#54504b;">${c.label}</span>
-      <span style="display:inline-flex;align-items:center;gap:6px;white-space:nowrap;">
-        <span style="font-size:11px;font-variant-numeric:tabular-nums;color:#84807a;">${c.ratio}</span>
-        <span style="font-size:9.5px;font-weight:600;letter-spacing:0.04em;color:#fff;background:${c.color};padding:2px 6px;border-radius:4px;">${c.tag}</span>
-      </span>
-    </div>`
-  ).join('');
-
-  return `<div style="border:1px solid #e4e0db;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,0.03);">
-    <div style="display:flex;height:84px;">${swatchStrip}</div>
-    <div style="display:flex;padding:10px 0 4px;">${swatchLabels}</div>
-    <div style="padding:18px 22px 6px;">
-      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:0;">${p.name}</h3>
-      <p style="font-size:13px;line-height:1.5;color:#6c675f;margin:6px 0 0;">${p.desc}</p>
-    </div>
-    <div style="margin:14px 22px 0;border-radius:10px;overflow:hidden;border:1px solid #ece8e3;">
-      <div style="background:${p.bg};padding:20px;">
-        <div style="background:${p.surface};border-radius:8px;padding:18px 18px 20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
-            <span style="width:9px;height:9px;border-radius:50%;background:${p.accent};display:inline-block;"></span>
-            <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:${p.muted};">Your care team</span>
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow reveal">Direct Care · Las Vegas &amp; Telehealth</div>
+          <h1 class="display reveal d1">A doctor who knows <em>all</em> of you.</h1>
+          <p class="lede reveal d2">Parity Direct Care brings internal medicine and psychiatry together under one membership — same-day access, real conversations, and not a single surprise bill. High-level care that isn't reserved for high incomes.</p>
+          <div class="hero-cta reveal d3">
+            <button class="btn btn-primary btn-lg" data-open-game>See if DPC is right for you <span class="arrow">→</span></button>
+            <a href="#join" class="btn btn-ghost btn-lg">Become a founding member</a>
           </div>
-          <div style="font-family:'Newsreader',serif;font-size:19px;color:${p.primary};line-height:1.25;margin-bottom:8px;">A doctor who actually knows you.</div>
-          <p style="font-size:12.5px;line-height:1.55;color:${p.text};margin:0 0 16px;">Same-day primary care, therapy, and psychiatry under one membership — no rush, no surprise bills.</p>
-          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-            <button style="border:none;background:${p.cta};color:${p.ctaText};font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:500;padding:10px 18px;border-radius:7px;cursor:pointer;">Become a member</button>
-            <span style="font-size:12.5px;font-weight:500;color:${p.secondary};">Meet the team →</span>
+          <div class="hero-trust reveal d3">
+            <div class="t"><b>2 boards</b><span>Internal Medicine + Psychiatry</span></div>
+            <div class="t"><b>7 states</b><span>In person &amp; telehealth</span></div>
+            <div class="t"><b>$0</b><span>Surprise bills, ever</span></div>
+          </div>
+        </div>
+        <div class="hero-art reveal d2">
+          <div class="art-panel">
+            <span class="ill" data-ill="doctor" aria-hidden="true"></span>
+            <div class="float-card">
+              <span class="dot">✓</span>
+              <span>
+                <span class="fc-t">Reply from Dr. Rouhani</span>
+                <span class="fc-b">“Come in this afternoon.”</span>
+              </span>
+            </div>
+            <div class="float-card tr">
+              <span class="dot">＄</span>
+              <span>
+                <span class="fc-t">This month</span>
+                <span class="fc-b">One flat fee</span>
+              </span>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div style="padding:16px 22px 20px;">
-      <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#9a948d;margin-bottom:10px;">WCAG contrast</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">${checkCells}</div>
-    </div>
-  </div>`;
-}
+    </section>
 
-['warm','cool'].forEach(group => {
-  const container = document.getElementById(group);
-  palettes[group].forEach(p => container.insertAdjacentHTML('beforeend', buildCard(p)));
-});
-</script>
+    <!-- ===================== PROBLEM ===================== -->
+    <section class="problem band-soft">
+      <div class="wrap">
+        <div class="eyebrow reveal">The old way</div>
+        <h2 class="section-title reveal d1"><span class="kicker">Ever opened a bill you never saw coming?</span><br>Insurance-based care wasn't built around you.</h2>
+        <div class="receipt reveal d2" aria-label="Example of a confusing insurance bill">
+          <div class="r-head"><span>Statement</span><span>This is not a bill*</span></div>
+          <div class="r-row"><span>Office visit (15 min)</span><span>$248.00</span></div>
+          <div class="r-row"><span>Adjustment — plan rate</span><span>−$96.20</span></div>
+          <div class="r-row"><span>“Facility fee”</span><span>$140.00</span></div>
+          <div class="r-row"><span>Applied to deductible</span><span>$291.80</span></div>
+          <div class="r-row total"><span>You owe</span><span class="amt">$291.80</span></div>
+          <div class="r-stamp">*It was a bill</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GAME INVITE ===================== -->
+    <section class="invite" id="game-invite">
+      <div class="wrap">
+        <div class="panel reveal">
+          <div>
+            <div class="eyebrow">Play it out</div>
+            <h2>See how two very different paths handle the same bad day.</h2>
+            <p>Pick a real-life moment — a nagging cough, a refill, a rough stretch mentally — and watch the insurance maze go head-to-head with membership care. Two minutes. It might change how you think about “having insurance.”</p>
+            <button class="btn btn-primary btn-lg" data-open-game>Start the walkthrough <span class="arrow">→</span></button>
+          </div>
+          <button class="play-badge" data-open-game aria-label="Start the walkthrough"><span></span></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section class="band" id="how">
+      <div class="wrap">
+        <div class="section-head reveal">
+          <span class="eyebrow">How direct care works</span>
+          <h2 class="section-title">Simple on purpose.</h2>
+          <p>No insurance middleman, no coding games. Just a membership and a doctor you can actually reach.</p>
+        </div>
+        <div class="steps">
+          <div class="step reveal"><div class="n">1</div><h3>Join</h3><p>One clear monthly membership. No copays, no deductibles, no coverage riddles.</p></div>
+          <div class="step reveal d1"><div class="n">2</div><h3>Reach out</h3><p>Call, text, email, or video your doctor directly — not a call tree, not a stranger.</p></div>
+          <div class="step reveal d2"><div class="n">3</div><h3>Get seen</h3><p>Same-day or next-day visits, in person in Las Vegas or by telehealth across 7 states.</p></div>
+          <div class="step reveal d3"><div class="n">4</div><h3>No surprises</h3><p>Longer visits, wholesale-priced labs and meds, and a bill you'll never have to decode.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PARITY: mind + body ===================== -->
+    <section id="care">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Care under one roof</span>
+          <h2 class="section-title">Your body and your mind get equal footing.</h2>
+          <p>That's the “parity” in Parity Direct Care. One physician, double board-certified, treating the whole person — because your health was never two separate things.</p>
+        </div>
+        <div class="parity-grid">
+          <div class="parity-card reveal">
+            <span class="ill" data-ill="weightlifting" aria-hidden="true"></span>
+            <div class="sub">Internal Medicine</div>
+            <h3>For your body</h3>
+            <p>Primary care that goes deep — prevention, everyday illness, and the long game of your health.</p>
+            <ul>
+              <li>Same-day sick visits &amp; urgent needs</li>
+              <li>Chronic conditions — diabetes, blood pressure, thyroid</li>
+              <li>Labs &amp; screenings at wholesale prices</li>
+              <li>Refills and quick questions, handled fast</li>
+            </ul>
+          </div>
+          <div class="parity-eq" aria-hidden="true">=</div>
+          <div class="parity-card reveal d1">
+            <span class="ill" data-ill="calm-armchair" aria-hidden="true"></span>
+            <div class="sub">Psychiatry</div>
+            <h3>For your mind</h3>
+            <p>Mental health treated with the same seriousness and skill — by the doctor who already knows your body.</p>
+            <ul>
+              <li>Anxiety, depression, burnout, sleep</li>
+              <li>ADHD evaluation &amp; treatment</li>
+              <li>Medication management done thoughtfully</li>
+              <li>Therapy-informed, unrushed conversations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TELEHEALTH REACH ===================== -->
+    <section class="band-soft" id="reach">
+      <div class="wrap reach-grid">
+        <div class="reach-copy reveal">
+          <span class="flag">◎ Based in Las Vegas, Nevada</span>
+          <h2 class="section-title">In the room, or on your screen.</h2>
+          <p>See Dr. Rouhani in person in Las Vegas, or connect by secure telehealth across six more states. Great care shouldn't depend on your zip code.</p>
+        </div>
+        <div class="states reveal d1">
+          <div class="state home"><span class="abbr">NV</span><span><span class="s-name">Nevada</span><br><span class="s-mode">In person + telehealth</span></span></div>
+          <div class="state"><span class="abbr">UT</span><span><span class="s-name">Utah</span><br><span class="s-mode">Telehealth</span></span></div>
+          <div class="state"><span class="abbr">WA</span><span><span class="s-name">Washington</span><br><span class="s-mode">Telehealth</span></span></div>
+          <div class="state"><span class="abbr">ID</span><span><span class="s-name">Idaho</span><br><span class="s-mode">Telehealth</span></span></div>
+          <div class="state"><span class="abbr">CO</span><span><span class="s-name">Colorado</span><br><span class="s-mode">Telehealth</span></span></div>
+          <div class="state"><span class="abbr">AZ</span><span><span class="s-name">Arizona</span><br><span class="s-mode">Telehealth</span></span></div>
+          <div class="state"><span class="abbr">MT</span><span><span class="s-name">Montana</span><br><span class="s-mode">Telehealth</span></span></div>
+          <div class="state"><span class="abbr" style="background:var(--tint-accent);color:var(--primary)">＋</span><span><span class="s-name">Telehealth from home</span><br><span class="s-mode">Video from anywhere in-state</span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PHYSICIAN ===================== -->
+    <section id="doctor">
+      <div class="wrap doc-grid">
+        <div class="doc-portrait reveal">
+          <span class="photo-note">Photo coming soon</span>
+          <span class="ill" data-ill="doctor" aria-hidden="true"></span>
+        </div>
+        <div class="doc-copy reveal d1">
+          <span class="eyebrow">Meet your physician</span>
+          <h2 class="section-title">Dr. Kavosh Rouhani</h2>
+          <p class="creds">Double board-certified in Internal Medicine &amp; Psychiatry — caring for the whole you.</p>
+          <p>Las Vegas is short on doctors who can treat body and mind together at the highest level. Dr. Rouhani is likely the only physician in the area board-certified in both Internal Medicine and Psychiatry — and Parity exists to put that rare, integrated expertise within reach of ordinary people, not just the well-off.</p>
+          <p class="placeholder-bio">Full bio coming soon — Dr. Rouhani's training, approach, and what led him to open a practice built on time, trust, and treating everyone like they matter.</p>
+          <div class="doc-badges">
+            <span class="b">Internal Medicine, Board Certified</span>
+            <span class="b">Psychiatry, Board Certified</span>
+            <span class="b">Las Vegas, NV</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== MEMBERSHIP ===================== -->
+    <section class="band" id="membership">
+      <div class="wrap">
+        <div class="section-head center reveal">
+          <span class="eyebrow">Membership</span>
+          <h2 class="section-title">One price. Everything that should've been simple all along.</h2>
+          <p>Founding members lock in the lowest rate we'll ever offer, for as long as they stay.</p>
+        </div>
+        <div class="plans">
+          <div class="plan reveal">
+            <h3>Individual</h3>
+            <p class="p-sub">Complete primary care and mental health for one person.</p>
+            <div class="price"><span class="amt">$XX</span><span class="per">/ month</span></div>
+            <div class="price-note">Placeholder pricing</div>
+            <ul>
+              <li>Direct access to Dr. Rouhani</li>
+              <li>Same-day &amp; next-day visits</li>
+              <li>Body &amp; mind care included</li>
+              <li>Wholesale labs &amp; medications</li>
+            </ul>
+            <a href="#join" class="btn btn-ghost">Choose Individual</a>
+          </div>
+          <div class="plan featured reveal d1">
+            <span class="tag">Founding member · limited</span>
+            <h3>Founding Member</h3>
+            <p class="p-sub">Join before we open and keep this rate for life.</p>
+            <div class="price"><span class="amt">$XX</span><span class="per">/ month</span></div>
+            <div class="price-note">Early-bird rate — placeholder</div>
+            <ul>
+              <li>Everything in Individual</li>
+              <li>Locked-in founding rate, forever</li>
+              <li>Priority onboarding at launch</li>
+              <li>A direct hand in shaping the practice</li>
+            </ul>
+            <a href="#join" class="btn btn-primary">Become a founding member</a>
+          </div>
+          <div class="plan reveal d2">
+            <h3>Household</h3>
+            <p class="p-sub">Bring the whole family under one simple membership.</p>
+            <div class="price"><span class="amt">$XX</span><span class="per">/ month</span></div>
+            <div class="price-note">Placeholder pricing</div>
+            <ul>
+              <li>Everything in Individual, per member</li>
+              <li>Discounted rate for additional people</li>
+              <li>One doctor who knows your family</li>
+              <li>Kids &amp; adults welcome</li>
+            </ul>
+            <a href="#join" class="btn btn-ghost">Choose Household</a>
+          </div>
+        </div>
+        <p class="price-disclaimer">Pricing shown is placeholder for this preview. Final membership rates are being set and will appear here before launch.</p>
+      </div>
+    </section>
+
+    <!-- ===================== SIGNUP ===================== -->
+    <section class="signup" id="join">
+      <div class="wrap">
+        <div class="panel reveal">
+          <div class="s-copy">
+            <span class="founding">★ Founding members</span>
+            <h2 class="section-title">Get in early. Save for good.</h2>
+            <p>Leave your details and we'll reach out the moment doors open — with a founding-member rate you'll keep for as long as you're a member. No commitment now; just first in line.</p>
+          </div>
+          <div>
+            <form id="signup-form" novalidate>
+              <div class="form-row">
+                <div class="field"><label for="f-name">Name</label><input id="f-name" name="name" type="text" placeholder="Your name" required></div>
+                <div class="field"><label for="f-email">Email</label><input id="f-email" name="email" type="email" placeholder="you@email.com" required></div>
+              </div>
+              <div class="form-row">
+                <div class="field">
+                  <label for="f-state">State</label>
+                  <select id="f-state" name="state">
+                    <option value="">Select…</option>
+                    <option>Nevada</option><option>Utah</option><option>Washington</option>
+                    <option>Idaho</option><option>Colorado</option><option>Arizona</option><option>Montana</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="f-interest">I'm most interested in</label>
+                  <select id="f-interest" name="interest">
+                    <option>Body &amp; mind — both</option>
+                    <option>Primary care</option>
+                    <option>Mental health</option>
+                  </select>
+                </div>
+              </div>
+              <button type="submit" class="btn btn-primary btn-lg">Reserve my founding rate <span class="arrow">→</span></button>
+              <p class="form-note">Preview site — this form isn't collecting submissions yet.</p>
+            </form>
+            <div class="form-success" id="signup-success">
+              <div class="check">✓</div>
+              <h3 style="font-family:var(--serif);margin-bottom:8px;">You're on the list.</h3>
+              <p style="color:var(--muted)">Thanks — this is a preview, so nothing was sent. On the live site, you'd be first to hear when Parity opens.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="footer">
+    <div class="wrap">
+      <div class="f-grid">
+        <div>
+          <a href="#top" class="brand"><span class="mark">P</span> Parity Direct Care</a>
+          <p>Integrated primary care and psychiatry, on a membership model. Body and mind, treated as equals — in Las Vegas and by telehealth across the West.</p>
+        </div>
+        <div>
+          <h4>Explore</h4>
+          <ul>
+            <li><a href="#how">How it works</a></li>
+            <li><a href="#care">Care under one roof</a></li>
+            <li><a href="#reach">Where we practice</a></li>
+            <li><a href="#membership">Membership</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Get in touch</h4>
+          <ul>
+            <li>Phone <span class="soon">coming soon</span></li>
+            <li>Email <span class="soon">coming soon</span></li>
+            <li>Message <span class="soon">coming soon</span></li>
+            <li><a href="#join">Founding-member signup →</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="f-bottom">
+        <span>ParityDirectCare.com — preview site</span>
+        <span>Not medical advice. In an emergency, call 911.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- game overlay is built by game.js -->
+  <div id="game" class="game" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Is direct care right for you?"></div>
+
+  <script src="game.js"></script>
+  <script src="main.js"></script>
 </body>
 </html>

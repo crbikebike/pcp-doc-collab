@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>DPC Color Palettes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    @media (max-width: 520px) {
+      body { padding: 40px 24px 72px !important; }
+      .palette-grid { grid-template-columns: 1fr !important; }
+    }
+  </style>
+</head>
+<body style="min-height:100vh; background:#f4f2ef; font-family:'Inter Tight', system-ui, sans-serif; color:#211f1d; padding:64px 56px 96px;">
+
+  <header style="max-width:760px; margin:0 0 56px;">
+    <div style="font-size:12px; letter-spacing:0.18em; text-transform:uppercase; color:#8a847d; margin-bottom:20px;">Direct Primary Care · Therapy &amp; Psychiatry</div>
+    <h1 style="font-family:'Newsreader', serif; font-weight:500; font-size:44px; line-height:1.1; margin:0 0 18px; letter-spacing:-0.01em;">Color palettes for a trusted health partner</h1>
+    <p style="font-size:17px; line-height:1.6; color:#54504b; margin:0; max-width:600px;">Warm and cool directions, each tuned to feel professional and reassuring. Every palette assigns a primary, secondary, accent, and a high-contrast CTA — with WCAG contrast ratios computed live so the type stays readable and inclusive.</p>
+    <div style="display:flex; gap:10px; margin-top:24px; font-size:13px; flex-wrap:wrap;">
+      <span style="display:inline-flex; align-items:center; gap:7px; padding:6px 12px; background:#fff; border:1px solid #e4e0db; border-radius:100px;"><span style="width:8px;height:8px;border-radius:50%;background:#3a7a5f;display:inline-block;"></span>AA passes</span>
+      <span style="display:inline-flex; align-items:center; gap:7px; padding:6px 12px; background:#fff; border:1px solid #e4e0db; border-radius:100px;"><span style="width:8px;height:8px;border-radius:50%;background:#1f6f6f;display:inline-block;"></span>AAA passes</span>
+    </div>
+  </header>
+
+  <section style="margin-bottom:18px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;">
+    <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:24px; margin:0;">Warm &amp; comforting</h2>
+    <span style="font-size:13px; color:#8a847d;">embracing, human, low-clinical</span>
+  </section>
+  <div id="warm" class="palette-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(420px, 1fr)); gap:28px; margin-bottom:64px;"></div>
+
+  <section style="margin-bottom:18px; display:flex; align-items:baseline; gap:14px; flex-wrap:wrap;">
+    <h2 style="font-family:'Newsreader', serif; font-weight:500; font-size:24px; margin:0;">Cool &amp; calming</h2>
+    <span style="font-size:13px; color:#8a847d;">steady, composed, quietly clinical</span>
+  </section>
+  <div id="cool" class="palette-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(420px, 1fr)); gap:28px;"></div>
+
+<script>
+const palettes = {
+  warm: [
+    { name:'Hearth', desc:'Plum-grey warmth with a dusty rose lift — soft, embracing, unhurried.',
+      primary:'#565264', secondary:'#706677', accent:'#A6808C', surface:'#FBF8F6', bg:'#E7DFDA', cta:'#8A4F5E',
+      ctaText:'#FFFFFF', text:'#322E36', muted:'#7C7480' },
+    { name:'Clay & Linen', desc:'Earthy terracotta and warm clay — grounded, reassuring, deeply human.',
+      primary:'#6B4A3A', secondary:'#9C7A66', accent:'#C9A892', surface:'#FBF6F0', bg:'#F0E6DB', cta:'#9C4626',
+      ctaText:'#FFFFFF', text:'#382A20', muted:'#8C7464' },
+    { name:'Dusk Comfort', desc:'Muted mauve and rose at evening — gentle, intimate, calming for sensitive care.',
+      primary:'#4E3D45', secondary:'#7D6670', accent:'#C2A0A6', surface:'#FBF7F6', bg:'#EFE4E2', cta:'#9E3F49',
+      ctaText:'#FFFFFF', text:'#2E2429', muted:'#80707A' },
+  ],
+  cool: [
+    { name:'Sage Clinic', desc:'Deep olive and soft mauve over cool linen — composed and quietly clinical.',
+      primary:'#45503B', secondary:'#747572', accent:'#B098A4', surface:'#FFFFFF', bg:'#E5EBEA', cta:'#2F6F62',
+      ctaText:'#FFFFFF', text:'#2A2E26', muted:'#76796F' },
+    { name:'Still Water', desc:'Teal-slate and pale aqua — steady, trustworthy, clear-headed.',
+      primary:'#2C4A52', secondary:'#5E7B82', accent:'#9DB4B8', surface:'#FFFFFF', bg:'#E9F0F1', cta:'#2E6F7C',
+      ctaText:'#FFFFFF', text:'#1E2E33', muted:'#6B8087' },
+    { name:'Morning Sage', desc:'Forest green with a warm terracotta CTA — calm base, inviting action.',
+      primary:'#3D5043', secondary:'#6E8071', accent:'#A8B9A4', surface:'#FFFFFF', bg:'#EAEFE9', cta:'#A84E2A',
+      ctaText:'#FFFFFF', text:'#232A24', muted:'#74806F' },
+    { name:'Harbor Blue', desc:'Deep navy and slate-blue over pale sky — confident, secure, unmistakably trustworthy.',
+      primary:'#22405C', secondary:'#4F6E8A', accent:'#9DB5CC', surface:'#FFFFFF', bg:'#E7EEF4', cta:'#1F6E8C',
+      ctaText:'#FFFFFF', text:'#1A2B3A', muted:'#647C92' },
+    { name:'Harbor Blue · Coral', desc:'Same navy base with a warm coral CTA — the complementary contrast makes the action jump off the cool field.',
+      primary:'#22405C', secondary:'#4F6E8A', accent:'#9DB5CC', surface:'#FFFFFF', bg:'#E7EEF4', cta:'#C24A3A',
+      ctaText:'#FFFFFF', text:'#1A2B3A', muted:'#647C92' },
+    { name:'Heather', desc:'Plum and soft lavender-grey on cool linen — calming and emotionally attuned for mental-health care.',
+      primary:'#473A52', secondary:'#6E5F7A', accent:'#B3A2C2', surface:'#FFFFFF', bg:'#ECE8F0', cta:'#6A4E8C',
+      ctaText:'#FFFFFF', text:'#272030', muted:'#7C7088' },
+    { name:'Driftwood', desc:'Cool taupe and sand over greige — warm-leaning neutral that still reads quiet and clinical.',
+      primary:'#4A4036', secondary:'#7A6E60', accent:'#C2B2A0', surface:'#FFFFFF', bg:'#ECE7E0', cta:'#3F6E63',
+      ctaText:'#FFFFFF', text:'#2B241D', muted:'#80776A' },
+    { name:'Driftwood · Sandstone', desc:'Same cool taupe base with a warm sandstone CTA — keeps the neutral calm but makes the action feel grounded and earthy.',
+      primary:'#4A4036', secondary:'#7A6E60', accent:'#C2B2A0', surface:'#FFFFFF', bg:'#ECE7E0', cta:'#9A5A33',
+      ctaText:'#FFFFFF', text:'#2B241D', muted:'#80776A' },
+  ]
+};
+
+function hexToRgb(h) {
+  h = h.replace('#','');
+  return [parseInt(h.slice(0,2),16), parseInt(h.slice(2,4),16), parseInt(h.slice(4,6),16)];
+}
+function lum([r,g,b]) {
+  const f = c => { c/=255; return c<=0.03928 ? c/12.92 : Math.pow((c+0.055)/1.055,2.4); };
+  return 0.2126*f(r)+0.7152*f(g)+0.0722*f(b);
+}
+function contrastRatio(a,b) {
+  const l1=lum(hexToRgb(a)), l2=lum(hexToRgb(b));
+  const hi=Math.max(l1,l2), lo=Math.min(l1,l2);
+  return (hi+0.05)/(lo+0.05);
+}
+function level(r, large) {
+  if (r >= 7)            return {tag:'AAA', color:'#1f6f6f'};
+  if (r >= 4.5)          return {tag:'AA',  color:'#3a7a5f'};
+  if (r >= 3 && large)   return {tag:'AA Large', color:'#b07d2e'};
+  return                        {tag:'Low', color:'#b04a3a'};
+}
+
+function buildCard(p) {
+  const swatches = [
+    {hex:p.primary,   role:'Primary'},
+    {hex:p.secondary, role:'Secondary'},
+    {hex:p.accent,    role:'Accent'},
+    {hex:p.surface,   role:'Surface'},
+    {hex:p.bg,        role:'Background'},
+    {hex:p.cta,       role:'CTA'},
+  ];
+
+  const mk = (fg, bg, label, large) => {
+    const r = contrastRatio(fg, bg);
+    const lv = level(r, large);
+    return {label, ratio:r.toFixed(1)+':1', tag:lv.tag, color:lv.color};
+  };
+  const checks = [
+    mk(p.text,    p.surface, 'Body on surface',    false),
+    mk(p.primary, p.surface, 'Heading on surface', true),
+    mk(p.ctaText, p.cta,     'Label on CTA',       false),
+    mk(p.text,    p.bg,      'Body on background',  false),
+  ];
+
+  const swatchStrip = swatches.map(s =>
+    `<div style="flex:1;background:${s.hex};"></div>`
+  ).join('');
+
+  const swatchLabels = swatches.map(s =>
+    `<div style="flex:1;text-align:center;padding:0 2px;">
+      <div style="font-size:9.5px;letter-spacing:0.08em;text-transform:uppercase;color:#9a948d;">${s.role}</div>
+      <div style="font-size:10px;font-family:'Inter Tight',monospace;color:#54504b;margin-top:2px;">${s.hex.toUpperCase()}</div>
+    </div>`
+  ).join('');
+
+  const checkCells = checks.map(c =>
+    `<div style="display:flex;align-items:center;justify-content:space-between;gap:8px;padding:8px 11px;background:#f7f5f2;border-radius:7px;">
+      <span style="font-size:11.5px;color:#54504b;">${c.label}</span>
+      <span style="display:inline-flex;align-items:center;gap:6px;white-space:nowrap;">
+        <span style="font-size:11px;font-variant-numeric:tabular-nums;color:#84807a;">${c.ratio}</span>
+        <span style="font-size:9.5px;font-weight:600;letter-spacing:0.04em;color:#fff;background:${c.color};padding:2px 6px;border-radius:4px;">${c.tag}</span>
+      </span>
+    </div>`
+  ).join('');
+
+  return `<div style="border:1px solid #e4e0db;border-radius:14px;overflow:hidden;background:#fff;box-shadow:0 1px 2px rgba(0,0,0,0.03);">
+    <div style="display:flex;height:84px;">${swatchStrip}</div>
+    <div style="display:flex;padding:10px 0 4px;">${swatchLabels}</div>
+    <div style="padding:18px 22px 6px;">
+      <h3 style="font-family:'Newsreader',serif;font-weight:500;font-size:22px;margin:0;">${p.name}</h3>
+      <p style="font-size:13px;line-height:1.5;color:#6c675f;margin:6px 0 0;">${p.desc}</p>
+    </div>
+    <div style="margin:14px 22px 0;border-radius:10px;overflow:hidden;border:1px solid #ece8e3;">
+      <div style="background:${p.bg};padding:20px;">
+        <div style="background:${p.surface};border-radius:8px;padding:18px 18px 20px;box-shadow:0 1px 3px rgba(0,0,0,0.06);">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px;">
+            <span style="width:9px;height:9px;border-radius:50%;background:${p.accent};display:inline-block;"></span>
+            <span style="font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:${p.muted};">Your care team</span>
+          </div>
+          <div style="font-family:'Newsreader',serif;font-size:19px;color:${p.primary};line-height:1.25;margin-bottom:8px;">A doctor who actually knows you.</div>
+          <p style="font-size:12.5px;line-height:1.55;color:${p.text};margin:0 0 16px;">Same-day primary care, therapy, and psychiatry under one membership — no rush, no surprise bills.</p>
+          <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+            <button style="border:none;background:${p.cta};color:${p.ctaText};font-family:'Inter Tight',sans-serif;font-size:13px;font-weight:500;padding:10px 18px;border-radius:7px;cursor:pointer;">Become a member</button>
+            <span style="font-size:12.5px;font-weight:500;color:${p.secondary};">Meet the team →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="padding:16px 22px 20px;">
+      <div style="font-size:10px;letter-spacing:0.1em;text-transform:uppercase;color:#9a948d;margin-bottom:10px;">WCAG contrast</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">${checkCells}</div>
+    </div>
+  </div>`;
+}
+
+['warm','cool'].forEach(group => {
+  const container = document.getElementById(group);
+  palettes[group].forEach(p => container.insertAdjacentHTML('beforeend', buildCard(p)));
+});
+</script>
+</body>
+</html>
