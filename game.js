@@ -13,31 +13,31 @@
   // Option order + polarity are mixed on purpose.
   const QUESTIONS = [
     {
-      id: 'wait', ill: 'reading-bench',
-      text: 'Do you enjoy waiting weeks for an appointment — then meeting a doctor who’s never met you?',
+      id: 'knows', ill: 'doctor',
+      text: 'Would you like a doctor who knows your name, your history, and your life?',
       options: [
-        { label: 'Ugh, no thanks', dpc: true, react: 'Same.' },
-        { label: 'Love it — keeps life spicy', dpc: false, react: 'Bold.' },
+        { label: 'Sounds Great!', dpc: true, react: 'Great choice.' },
+        { label: "No, I do not.", dpc: false, react: 'Living dangerously.' },
+      ],
+      recap: 'you want a doctor who truly knows you',
+    },
+    {
+      id: 'wait', ill: 'reading-bench',
+      text: 'Do you want access to your doctor in days rather than weeks?',
+      options: [
+        { label: 'Yes. Yes I do.', dpc: true, react: 'Same.' },
+        { label: 'No way!', dpc: false, react: 'Bold.' },
       ],
       recap: 'you’re done waiting weeks to see a stranger',
     },
     {
       id: 'bills', ill: 'growth-chart',
-      text: 'Be honest: do you love a surprise bill showing up three weeks after a quick visit?',
+      text: 'How does getting rid of surprise bills after an office visit sound?',
       options: [
-        { label: 'Absolutely not', dpc: true, react: 'Noted.' },
-        { label: 'I live for them 🧾', dpc: false, react: 'A thrill-seeker.' },
+        { label: 'Sounds lovely!', dpc: true, react: 'Noted.' },
+        { label: 'I enjoy mystery bills.', dpc: false, react: 'A thrill-seeker.' },
       ],
       recap: 'you’re over surprise bills',
-    },
-    {
-      id: 'knows', ill: 'doctor',
-      text: 'Would you actually like a doctor who knows your name, your history, and your life?',
-      options: [
-        { label: 'Wild idea, but yes', dpc: true, react: 'Great choice.' },
-        { label: 'Nah, I like starting over each time', dpc: false, react: 'Living dangerously.' },
-      ],
-      recap: 'you want a doctor who truly knows you',
     },
   ];
 
