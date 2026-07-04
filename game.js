@@ -9,35 +9,39 @@
   const FIT_THRESHOLD = 2; // DPC-favorable answers (of 3) needed to "match"
 
   // Each question: two witty buttons. `dpc:true` = the DPC-favorable pick.
-  // `recap` is echoed back in the result when they choose the DPC answer.
+  // `affirm` is the result-screen line tying that specific pick back to DPC —
+  // shown for whichever option they choose, not just the favorable one.
   // Option order + polarity are mixed on purpose.
   const QUESTIONS = [
     {
       id: 'knows', ill: 'doctor',
       text: 'Would you like a doctor who knows your name, your history, and your life?',
       options: [
-        { label: 'Sounds Great!', dpc: true, react: 'Great choice.' },
-        { label: "No, I do not.", dpc: false, react: 'Living dangerously.' },
+        { label: 'Sounds Great!', dpc: true, react: 'Great choice.',
+          affirm: "You want a doctor who knows your name, your history, your whole deal. That's just Tuesday at Parity." },
+        { label: "No, I do not.", dpc: false, react: 'Living dangerously.',
+          affirm: "No rush. When you're ready for a doctor who actually remembers you, we'll be right here." },
       ],
-      recap: 'you want a doctor who truly knows you',
     },
     {
       id: 'wait', ill: 'reading-bench',
       text: 'Do you want access to your doctor in days rather than weeks?',
       options: [
-        { label: 'Yes. Yes I do.', dpc: true, react: 'Same.' },
-        { label: 'No way!', dpc: false, react: 'Bold.' },
+        { label: 'Yes. Yes I do.', dpc: true, react: 'Same.',
+          affirm: 'Same-day access, real conversations, and no waiting room full of month-old magazines.' },
+        { label: 'No way!', dpc: false, react: 'Bold.',
+          affirm: 'When long waits wear thin, same-day access will be here for you.' },
       ],
-      recap: 'you’re done waiting weeks to see a stranger',
     },
     {
       id: 'bills', ill: 'growth-chart',
       text: 'How does getting rid of surprise bills after an office visit sound?',
       options: [
-        { label: 'Sounds lovely!', dpc: true, react: 'Noted.' },
-        { label: 'I enjoy mystery bills.', dpc: false, react: 'A thrill-seeker.' },
+        { label: 'Sounds lovely!', dpc: true, react: 'Noted.',
+          affirm: 'One flat membership, zero surprise invoices, and bills you can finally predict.' },
+        { label: 'I enjoy mystery bills.', dpc: false, react: 'A thrill-seeker.',
+          affirm: 'Fair enough. A flat, predictable membership is here the day surprise bills stop being fun.' },
       ],
-      recap: 'you’re over surprise bills',
     },
   ];
 
@@ -134,43 +138,36 @@
     const score = chosen.filter(a => a.dpc).length;
     const fit = score >= FIT_THRESHOLD;
 
-    // personalized recap from their DPC-favorable picks
-    const phrases = QUESTIONS.filter((q, i) => answers[i] && answers[i].dpc).map(q => q.recap);
-    const recap = phrases.length ? sentence(phrases) : '';
-
     const top = fit
-      ? { eyebrow: 'The verdict', h: 'Sounds like we’re a fit. 🎉' }
-      : { eyebrow: 'The verdict', h: 'Hmm — we might not match. Yet.' };
+      ? { ill: 'weightlifting', eyebrow: 'The verdict', h: 'Sounds like we’re a fit.' }
+      : { ill: 'calm-armchair', eyebrow: 'The verdict', h: 'Hmm — we might not match. Yet.' };
 
-    const body = fit
-      ? `
-        ${recap ? `<p class="recap">${cap(recap)} — that’s exactly what Parity is built for.</p>` : `<p class="recap">You and Parity want the same thing: care that actually works for you.</p>`}
-        <ul class="recap-list">
-          <li><span class="w-ic">✓</span><span>A doctor who knows you — body and mind, under one roof</span></li>
-          <li><span class="w-ic">✓</span><span>Same-day access, real conversations, no phone-tree runaround</span></li>
-          <li><span class="w-ic">✓</span><span>One flat membership — and never a surprise bill</span></li>
-        </ul>
-        <div class="result-cta">
-          <a href="#join" class="btn btn-primary btn-lg" data-join>Become a founding member <span class="arrow">→</span></a>
-          <br><button class="restart" data-restart>Retake the quiz</button>
-        </div>`
-      : `
-        <p class="recap">…but that’s probably just because you haven’t experienced direct care yet. Most people don’t know it’s an option until they feel it.</p>
-        ${recap ? `<p class="recap-soft">For what it’s worth, ${recap}. That’s more “us” than you think.</p>` : ''}
-        <div class="result-cta">
-          <a href="#care" class="btn btn-primary btn-lg" data-learn>See what DPC actually feels like <span class="arrow">→</span></a>
-          <br><button class="restart" data-restart>Retake the quiz</button>
-        </div>`;
+    const rows = QUESTIONS.map((q, i) => `
+        <li class="affirm-row ${answers[i].dpc ? 'is-match' : 'is-open'}">
+          <span class="aff-ic ill" data-ill="${q.ill}" aria-hidden="true"></span>
+          <div class="aff-copy"><p class="aff-line">${answers[i].affirm}</p></div>
+          <span class="aff-mark" aria-hidden="true">${answers[i].dpc ? '✓' : '~'}</span>
+        </li>`).join('');
+
+    const cta = fit
+      ? { href: '#join', attr: 'data-join', label: 'Become a founding member' }
+      : { href: '#care', attr: 'data-learn', label: 'See what DPC actually feels like' };
 
     paint(`
       <div class="result">
         <div class="result-card ${fit ? 'is-fit' : 'is-miss'}">
           <div class="rc-top">
+            <span class="ill big" data-ill="${top.ill}" aria-hidden="true"></span>
             <span class="eyebrow">${top.eyebrow}</span>
             <h2>${top.h}</h2>
-            <div class="score-pill">${score}/${QUESTIONS.length} DPC</div>
           </div>
-          <div class="rc-body">${body}</div>
+          <div class="rc-body">
+            <ul class="affirm-list">${rows}</ul>
+            <div class="result-cta">
+              <a href="${cta.href}" class="btn btn-primary btn-lg" ${cta.attr}>${cta.label} <span class="arrow">→</span></a>
+              <br><button class="restart" data-restart>Retake the quiz</button>
+            </div>
+          </div>
         </div>
       </div>`);
 
@@ -178,14 +175,6 @@
     const learn = $('[data-learn]', stage); if (learn) learn.addEventListener('click', close);
     $('[data-restart]', stage).addEventListener('click', renderIntro);
   }
-
-  // join short phrases into a natural sentence: "a, b, and c"
-  function sentence(arr) {
-    if (arr.length === 1) return arr[0];
-    if (arr.length === 2) return arr[0] + ' and ' + arr[1];
-    return arr.slice(0, -1).join(', ') + ', and ' + arr[arr.length - 1];
-  }
-  const cap = s => s.charAt(0).toUpperCase() + s.slice(1);
 
   /* ---------- open / close ---------- */
   function open() {
