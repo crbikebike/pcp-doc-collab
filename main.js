@@ -35,6 +35,18 @@
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
 
+  /* ---------- mobile floating join CTA: fade in once past the hero ---------- */
+  const joinFab = document.getElementById('mobile-join-fab');
+  const hero = document.querySelector('.hero');
+  if (joinFab && hero) {
+    const onFabScroll = () => {
+      const past = window.scrollY > hero.offsetHeight * 0.6;
+      joinFab.classList.toggle('is-visible', past);
+    };
+    onFabScroll();
+    window.addEventListener('scroll', onFabScroll, { passive: true });
+  }
+
   /* ---------- scroll reveal ---------- */
   const reveals = document.querySelectorAll('.reveal');
   if ('IntersectionObserver' in window && reveals.length) {

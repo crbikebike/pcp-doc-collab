@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400;1,6..72,500&family=Inter+Tight:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
-  <script src="palettes.js"></script>
 </head>
 <body>
 
@@ -55,7 +54,7 @@
               </span>
             </div>
             <div class="float-card tr">
-              <span class="dot">＄</span>
+              <span class="dot">?</span>
               <span>
                 <span class="fc-t">To Dr. Rouhani:</span>
                 <span class="fc-b">Had a question, can I come in?</span>
@@ -72,7 +71,7 @@
         <div class="eyebrow reveal">The old way</div>
         <h2 class="section-title reveal d1"><span class="kicker">Ever opened a bill you never saw coming?</span><br>Insurance-based care wasn't built around you.</h2>
         <div class="receipt reveal d2" aria-label="Example of a confusing insurance bill">
-          <div class="r-head"><span>Statement</span><span></span></div>
+          <div class="r-head"><span>Statement</span></div>
           <div class="r-row"><span>Office visit (15 min)</span><span>$248.00</span></div>
           <div class="r-row"><span>Adjustment — plan rate</span><span>−$96.20</span></div>
           <div class="r-row"><span>“Facility fee”</span><span>$140.00</span></div>
@@ -91,10 +90,10 @@
           <p>No insurance middleman, no coding games. Just a membership and a doctor you can actually reach.</p>
         </div>
         <div class="steps">
-          <div class="step reveal"><span class="ill" data-ill="person-plant" aria-hidden="true"></span><div class="n">1</div><h3>Join</h3><p>One clear monthly membership. No copays, no deductibles, no coverage riddles.</p></div>
-          <div class="step reveal d1"><span class="ill" data-ill="message-doctor" aria-hidden="true"></span><div class="n">2</div><h3>Reach out</h3><p>Call, text, email, or video your doctor directly — not a call tree, not a stranger.</p></div>
-          <div class="step reveal d2"><span class="ill" data-ill="person-running" aria-hidden="true"></span><div class="n">3</div><h3>Get seen</h3><p>Same-day or next-day visits, in person in Las Vegas or by telehealth across 7 states.</p></div>
-          <div class="step reveal d3"><span class="ill" data-ill="reading-bench" aria-hidden="true"></span><div class="n">4</div><h3>No surprises</h3><p>Longer visits, wholesale-priced labs and meds, and a bill you'll never have to decode.</p></div>
+          <div class="step reveal"><div class="step-media"><span class="ill" data-ill="person-plant" aria-hidden="true"></span><div class="n">1</div></div><h3>Join</h3><p>One clear monthly membership. No copays, no deductibles, no coverage riddles.</p></div>
+          <div class="step reveal d1"><div class="step-media"><span class="ill" data-ill="message-doctor" aria-hidden="true"></span><div class="n">2</div></div><h3>Reach out</h3><p>Call, text, email, or video your doctor directly — not a call tree, not a stranger.</p></div>
+          <div class="step reveal d2"><div class="step-media"><span class="ill" data-ill="person-running" aria-hidden="true"></span><div class="n">3</div></div><h3>Get seen</h3><p>Same-day or next-day visits, in person in Las Vegas or by telehealth across 7 states.</p></div>
+          <div class="step reveal d3"><div class="step-media"><span class="ill" data-ill="reading-bench" aria-hidden="true"></span><div class="n">4</div></div><h3>No surprises</h3><p>Longer visits, wholesale-priced labs and meds, and a bill you'll never have to decode.</p></div>
         </div>
       </div>
     </section>
@@ -322,6 +321,9 @@
 
   <!-- game overlay is built by game.js -->
   <div id="game" class="game" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Is direct care right for you?"></div>
+
+  <!-- persistent mobile sign-up shortcut -->
+  <a href="#join" class="mobile-join-fab" id="mobile-join-fab">Join today</a>
 
   <script src="game.js"></script>
   <script src="main.js"></script>
