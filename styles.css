@@ -272,6 +272,7 @@ section { position: relative; padding: clamp(64px, 10vw, 128px) 0; }
 .step .n { font-family: var(--serif); font-size: 1rem; color: var(--cta); border: 1.5px solid var(--tint-cta); background: var(--tint-cta); width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; margin-bottom: 18px; font-weight: 600; }
 .step h3 { font-size: 1.28rem; margin-bottom: 8px; }
 .step p { font-size: .95rem; color: var(--muted); }
+.step .ill { width: clamp(48px, 8vw, 64px); height: clamp(48px, 8vw, 64px); color: var(--primary); margin-bottom: 14px; }
 
 /* ============================================================
    PARITY — care under one roof (mind + body)
@@ -283,7 +284,7 @@ section { position: relative; padding: clamp(64px, 10vw, 128px) 0; }
   padding: clamp(28px, 4vw, 44px); box-shadow: var(--shadow-md);
   display: flex; flex-direction: column;
 }
-.parity-card .ill { width: 128px; height: 128px; color: var(--primary); margin-bottom: 22px; }
+.parity-card .ill { width: clamp(88px, 20vw, 128px); height: clamp(88px, 20vw, 128px); color: var(--primary); margin-bottom: 22px; }
 .parity-card h3 { font-size: 1.7rem; margin-bottom: 6px; }
 .parity-card .sub { font-size: .82rem; letter-spacing: .1em; text-transform: uppercase; color: var(--cta); margin-bottom: 16px; }
 .parity-card p { color: var(--muted); }
@@ -306,6 +307,7 @@ section { position: relative; padding: clamp(64px, 10vw, 128px) 0; }
 .reach-copy .flag { display: inline-flex; align-items: center; gap: 8px; background: var(--tint-cta); color: var(--cta); border-radius: 100px; padding: 7px 14px; font-size: .84rem; font-weight: 600; margin-bottom: 20px; }
 .reach-copy h2 { margin-bottom: 16px; }
 .reach-copy p { color: var(--muted); max-width: 42ch; }
+.reach-copy .ill { display: block; width: clamp(84px, 16vw, 132px); height: clamp(84px, 16vw, 132px); color: var(--primary); margin-bottom: 20px; }
 .states { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
 @media (max-width: 480px) { .states { grid-template-columns: 1fr; } }
 .state {
@@ -365,6 +367,7 @@ section { position: relative; padding: clamp(64px, 10vw, 128px) 0; }
 .plan li { display: flex; gap: 10px; font-size: .94rem; color: color-mix(in srgb, var(--text) 88%, var(--bg)); }
 .plan li::before { content: "✓"; color: var(--cta); font-weight: 700; flex: none; }
 .plan .btn { width: 100%; justify-content: center; }
+.plan .ill { width: clamp(56px, 9vw, 72px); height: clamp(56px, 9vw, 72px); color: var(--primary); margin-bottom: 18px; }
 .price-disclaimer { text-align: center; margin-top: 26px; font-size: .84rem; color: var(--muted); font-style: italic; }
 
 /* ============================================================
